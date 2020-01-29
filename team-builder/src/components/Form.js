@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import './Form.css';
 
-function Form(){
+function Form(props){
+    console.log(props);
 
     const [ formData, setFormData ] = useState({
         name: '',
         email: '',
         role: ''
     });
-
-
-
 
     const changeHandler = event => {
         setFormData({
@@ -22,6 +20,7 @@ function Form(){
     const handleSubmit = event => {
         event.preventDefault();
         console.log(formData);
+        props(event);
         event.persist();
         const initialState = {
             name: '',
@@ -30,8 +29,6 @@ function Form(){
         }
         setFormData(initialState);
     };
-
-    
 
     return(
         <div className="InputForm">

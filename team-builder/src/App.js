@@ -3,10 +3,12 @@ import Form from './components/Form';
 
 function App() {
 
+  const [ teamMember, setTeamMember ] = useState([]);
+
+  console.log(teamMember);
+  
   return (
-
-    <Form/>
-
+    <Form setTeamMember={setTeamMember}/>
   );
 }
 
